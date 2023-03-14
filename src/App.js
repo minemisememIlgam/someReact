@@ -3,7 +3,13 @@ import './App.css'
 import Button from './components/Button'
 import Counter from './components/Counter'
 
+const texts = [
+  "нет",
+  'да',
+  'мб',
+  'возможно'
 
+]
 
 
 function App() {
@@ -21,9 +27,9 @@ function App() {
 
  <Counter count = {count}/>
  
- <Button onClick = {incrementCount} text = 'нет'/>
- <Button onClick = {incrementCount} text = 'нет'/>
- <Button onClick = {incrementCount} text = 'нет'/>
+ {texts.map((text, index) => {
+  return <Button onClick={incrementCount} text = {text} key = {index}/>
+ })}
   </div>
   )
 }
